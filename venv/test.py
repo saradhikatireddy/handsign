@@ -4,8 +4,8 @@ from cvzone.HandTrackingModule import HandDetector
 from cvzone.ClassificationModule import Classifier
 import numpy as np
 import math
-
 import pyttsx3
+
 engine = pyttsx3.init()
 voices = engine.getProperty('voices')
 engine.setProperty('voice', voices[1].id)
@@ -76,3 +76,4 @@ while True:
  
     cv2.imshow("Image", imgOutput)
     cv2.waitKey(1)
+    
