@@ -1,0 +1,32 @@
+
+<html>
+<head>
+    <title>Button Example</title>
+    <style>
+        .button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button class="button" onclick="runTestPy()">Run test.py</button>
+
+    <script>
+        function runTestPy() {
+            // Create a new XMLHttpRequest object
+            var xhr = new XMLHttpRequest();
+
+            // Define the request URL
+            var url = "venv/test.py";
+
+            // Send a GET request to the server
+            xhr.open("GET", url, true);
+            xhr.send();
+        }
+    </script>
+</body>
+</html>
