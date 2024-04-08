@@ -1,31 +1,22 @@
-
+<!DOCTYPE html>
 <html>
 <head>
-    <title> button</title>
-    <style>
-        .button {
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-    </style>
-</head>
-<body>
-    <button class="button" onclick="runTestPy()">Run test.py</button>
+    <title>Run Python File</title>
     <script>
-        function runTestPy() {
-            // Create a new XMLHttpRequest object
-            var xhr = new XMLHttpRequest();
-
-            // Define the request URL
-            var url = "venv/test.py";
-
-            // Send a GET request to the server
-            xhr.open("GET", url, true);
-            xhr.send();
+        function runPythonFile() {
+            // Replace "path/to/your/python/file.py" with the actual path to your Python file
+            const pythonFilePath = "venv\test.py";
+            
+            // Open the VS Code terminal and execute the Python file
+            const vscode = acquireVsCodeApi();
+            vscode.postMessage({
+                command: 'runPythonFile',
+                pythonFilePath: pythonFilePath
+            });
         }
     </script>
+</head>
+<body>
+    <button onclick="runPythonFile()">Run Python File</button>
 </body>
 </html>
